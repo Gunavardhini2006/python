@@ -92,7 +92,7 @@ def draw_analog_clock():
 
 draw_analog_clock()
 
-# ================= ALARM FRAME =================
+# --alarm
 alarm_frame = Frame(frame_container, bg="#1a1a2e")
 Label(alarm_frame, text="⏰ Alarm", font=("Comic Sans MS", 32, "bold"), fg="#05f551", bg="#1a1a2e").pack(pady=27)
 Label(alarm_frame, text="Set Time (HH:MM):", font=("Arial", 24), fg="#f5e905", bg="#1a1a2e").pack()
@@ -114,7 +114,7 @@ def check_alarm():
 
 Button(alarm_frame, text="Set Alarm", font=("Verdana", 16, "bold"), bg="#f50505", fg="white", command=lambda: threading.Thread(target=check_alarm, daemon=True).start()).pack(pady=5)
 
-# ================= TIMER FRAME =================
+# --timer
 timer_frame = Frame(frame_container, bg="#1a1a2e")
 Label(timer_frame, text="⏱ Timer", font=("Comic Sans MS", 32, "bold"), fg="#fc9905", bg="#1a1a2e").pack(pady=20)
 Label(timer_frame, text="Enter Minutes:", font=("Arial", 28), fg="#d869fa", bg="#1a1a2e").pack()
@@ -168,7 +168,6 @@ def stop_timer():
     global timer_running
     timer_running = False
 
-# Frame to hold Start/Stop buttons centered below the timer
 timer_button_frame = Frame(timer_frame, bg="#1a1a2e")
 timer_button_frame.pack(pady=10)
 
@@ -182,7 +181,7 @@ Button(timer_button_frame, text="Reset", font=("Verdana", 16, "bold"), bg="#2c2c
 
 
 
-# ================= STOPWATCH FRAME =================
+# --stop watch
 stopwatch_frame = Frame(frame_container, bg="#1a1a2e")
 Label(stopwatch_frame, text="⏱ Stopwatch", font=("Comic Sans MS", 32, "bold"), fg="#eefa0c", bg="#1a1a2e").pack(pady=20)
 
@@ -222,7 +221,6 @@ Button(btn_frame, text="Start", font=("Verdana", 16, "bold"), bg="#0bd40b", fg="
 Button(btn_frame, text="Stop", font=("Verdana", 16, "bold"), bg="#f01707", fg="white", command=stop_stopwatch).pack(side=LEFT, padx=10)
 Button(btn_frame, text="Reset", font=("Verdana", 16, "bold"), bg="#fa00f6", fg="white", command=reset_stopwatch).pack(side=LEFT, padx=10)
 
-# ================= VIEW SWITCH FUNCTION =================
 def show_frame(frame):
     frame.tkraise()
 
